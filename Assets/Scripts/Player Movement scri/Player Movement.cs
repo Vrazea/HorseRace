@@ -5,7 +5,7 @@ public class PlayerMovementScript : MonoBehaviour
 
     [SerializeField] private float speed = 10.2f;
     [SerializeField] private Rigidbody rbPlayer; 
-    
+    [SerializeField] private float sidewaysSpeed = 3.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,11 +18,11 @@ public class PlayerMovementScript : MonoBehaviour
         rbPlayer.AddForce(0.0f, 0.0f, speed);
         if (Input.GetKey(KeyCode.Q))
         {
-            rbPlayer.AddForce(-10.0f, 0.0f, 0.0f);
+            rbPlayer.AddForce(-sidewaysSpeed, 0.0f, 0.0f, ForceMode.VelocityChange);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rbPlayer.AddForce(10.0f, 0.0f, 0.0f);
+            rbPlayer.AddForce(sidewaysSpeed, 0.0f, 0.0f, ForceMode.VelocityChange);
         }
     }
 }
