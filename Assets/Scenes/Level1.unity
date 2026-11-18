@@ -352,6 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 76288657}
+  - component: {fileID: 76288658}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -374,6 +375,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &76288658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76288656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e6bc51d84fc5c418f33542bb3d817a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!4 &108486806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7356515367573755775, guid: 7f03db42499c184418fe8f849b0a67cd, type: 3}
@@ -1754,6 +1767,7 @@ GameObject:
   - component: {fileID: 727378129}
   - component: {fileID: 727378128}
   - component: {fileID: 727378127}
+  - component: {fileID: 727378131}
   m_Layer: 0
   m_Name: EndTrigger
   m_TagString: Untagged
@@ -1776,7 +1790,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1789,7 +1803,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727378126}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1854,6 +1868,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &727378131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727378126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231e6de9486308e40802df159bca602e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  gameManager: {fileID: 76288658}
 --- !u!1 &742019257 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2925036586421041331, guid: 8397a63b6f6029c4883b55fa20d86ae2, type: 3}
@@ -4651,11 +4678,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovementScript
   speed: 10.2
   rbPlayer: {fileID: 1705133634}
+  sidewaysSpeed: 3
 --- !u!4 &1705133638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3659140983634492443, guid: 4241fc939cf24a740983092f2aed5837, type: 3}
   m_PrefabInstance: {fileID: 2035664317}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1705133639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705133631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868a8b359d8cb6a448f9da79d6173348, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playerMovementScript: {fileID: 1705133637}
 --- !u!4 &1794031317 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3985853836440573454, guid: 8397a63b6f6029c4883b55fa20d86ae2, type: 3}
@@ -5408,6 +5449,7 @@ GameObject:
   - component: {fileID: 1903094950}
   - component: {fileID: 1903094952}
   - component: {fileID: 1903094951}
+  - component: {fileID: 1903094953}
   m_Layer: 5
   m_Name: ScoreTMP
   m_TagString: Untagged
@@ -5534,6 +5576,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903094949}
   m_CullTransparentMesh: 1
+--- !u!114 &1903094953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903094949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42568e804f41fcf4a97122c2e97c6fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  transformPlayer: {fileID: 1705133638}
+  scoreText: {fileID: 1903094951}
 --- !u!1 &1904881814
 GameObject:
   m_ObjectHideFlags: 0
@@ -5974,6 +6030,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3659140983634492436, guid: 4241fc939cf24a740983092f2aed5837, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3659140983634492443, guid: 4241fc939cf24a740983092f2aed5837, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.8
@@ -6046,6 +6106,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3659140983634492436, guid: 4241fc939cf24a740983092f2aed5837, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1705133637}
+    - targetCorrespondingSourceObject: {fileID: 3659140983634492436, guid: 4241fc939cf24a740983092f2aed5837, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1705133639}
   m_SourcePrefab: {fileID: 100100000, guid: 4241fc939cf24a740983092f2aed5837, type: 3}
 --- !u!1 &2040222007 stripped
 GameObject:
