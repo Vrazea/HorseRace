@@ -2576,6 +2576,7 @@ GameObject:
   - component: {fileID: 1125537526}
   - component: {fileID: 1125537525}
   - component: {fileID: 1125537524}
+  - component: {fileID: 1125537527}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2657,6 +2658,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 10, y: 0, z: 0}
+--- !u!114 &1125537527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125537523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b8e1186e6228a489f82732bd632575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  TransformPlayer: {fileID: 1705133638}
+  offset: {x: 0, y: 4, z: -7}
 --- !u!4 &1175357112 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 570426054858148555, guid: 39c74c1025e00fa48ada3437fbef223a, type: 3}
@@ -4622,6 +4637,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.97153854, y: 1.4629425, z: 3.7903802}
   m_Center: {x: 0.019890442, y: 0.73147124, z: 0.6451898}
+--- !u!114 &1705133637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705133631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9034c239d70aa544bb117feb808795d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovementScript
+  speed: 10.2
+  rbPlayer: {fileID: 1705133634}
+--- !u!4 &1705133638 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3659140983634492443, guid: 4241fc939cf24a740983092f2aed5837, type: 3}
+  m_PrefabInstance: {fileID: 2035664317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1794031317 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3985853836440573454, guid: 8397a63b6f6029c4883b55fa20d86ae2, type: 3}
@@ -6009,6 +6043,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3659140983634492436, guid: 4241fc939cf24a740983092f2aed5837, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1705133636}
+    - targetCorrespondingSourceObject: {fileID: 3659140983634492436, guid: 4241fc939cf24a740983092f2aed5837, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1705133637}
   m_SourcePrefab: {fileID: 100100000, guid: 4241fc939cf24a740983092f2aed5837, type: 3}
 --- !u!1 &2040222007 stripped
 GameObject:
