@@ -2,8 +2,14 @@ using UnityEngine;
 
 public class PlayCollisions : MonoBehaviour
 {
-    void OnCollisionEnter()
+    [SerializeField] private PlayerMovementScript playerMovementScript;
+    void OnCollisionEnter(Collision collisionInfo)
     {
-        Debug.Log(" touché qqch");
+        if (collisionInfo.collider.CompareTag("Obstacle"))
+        {
+            Debug.Log("touché qqch " + collisionInfo.collider.name);
+            playerMovementScript.enabled = false;
+        }
+        
     }
 }
